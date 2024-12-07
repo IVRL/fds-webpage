@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description"
+      content="VolRecon: Volume Rendering of Signed Ray Distance Functions for Generalizable Multi-View Reconstruction">
+    <meta name="keywords"
+      content="VolRecon, volume rendering, multi-view reconstruction">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FDS: Frequency-Aware Denoising Score for Text-Guided Latent Diffusion Image Editing</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+      rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+    <script type="module"
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+  </head>
+  <body>
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a role="button" class="navbar-burger" aria-label="menu"
+          aria-expanded="false">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">FDS: Frequency-Aware Denoising Score for Text-Guided Latent Diffusion Image Editing</h1>
+              <!-- <h2 class="is-size-2">CVPR2025</h2> -->
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                  <a href="https://people.epfl.ch/yufan.ren?lang=en">Yufan Ren</a><sup>1</sup>,</span>
+                <span class="author-block">
+                  <a href="https://zicongjiang.github.io/zicong-jiang/">Zicong Jiang</a><sup>1,2,3
+                    *</sup>,</span>
+                <span class="author-block">
+                  <a href="https://people.epfl.ch/tong.zhang?lang=en">Tong Zhang</a><sup>1</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="https://orbit.dtu.dk/en/persons/s%C3%B8ren-otto-forchhammer">Søren Otto Forchhammer</a><sup>2</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="https://people.epfl.ch/sabine.susstrunk">Sabine
+                    Süsstrunk</a><sup>1</sup>
+                </span>
+              </div>
+
+              <div class="column is-full_width">
+                <h2 class="is-size-6">* Work done as a master thesis student at IVRL before moving to
+                  Chalmers University of Technology to pursue a PhD</h2>
+                <!-- <h2 class="is-size-6">(* equal contribution)  (<span>&#8224;</span> corresponding author)</h2> -->
+              </div>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"><sup>1</sup>IVRL, IC, EPFL</span>&nbsp;&nbsp;
+                <span class="author-block"><sup>2</sup>Electro, DTU</span>&nbsp;&nbsp;
+                <span class="author-block"><sup>3</sup>Electrical Engineering, Chalmers</span>&nbsp;&nbsp;
+              </div>
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <span class="link-block">
+                    <a href="https://arxiv.org/abs/" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper (Coming soon)</span>
+                  </a>
+                </span>
+
+              <!-- Github link -->
+              <span class="link-block">
+                <a href="https://github.com/IVRL" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Github (Coming soon)</span>
+              </a>
+            </span>
+
+            <!-- ArXiv abstract Link -->
+            <span class="link-block">
+              <a href="https://arxiv.org/abs/" target="_blank"
+              class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                <i class="ai ai-arxiv"></i>
+              </span>
+              <span>arXiv</span>
+            </a>
+          </span>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- Teaser video-->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="columns is-centered has-text-centered">
+        <!-- <div class="container"> -->
+        <!-- <img src="static/images/results/sample.gif" alt="Examples" width="400"></src> -->
+        <video autoplay muted loop style="width: 60%; height: auto;">
+          <source src="static/videos/video.mp4" type="video/mp4">
+        </video>
+        <!-- </div> -->
+      </div>
+    </div>
+  </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full_width">
+            <h2 class="title is-3">Abstract</h2>
+            <img src="static/images/pdfresizer.com-pdf-crop - 2024-11-14T223326.782-1.png" class="center" />
+            <div class="content has-text-justified">
+              <p>
+                Text-guided image editing using Text-to-Image (T2I) models often fails to yield satisfactory results, frequently introducing unintended modifications such as loss of local details and color alterations. In this paper, we analyze these failure cases and attribute them to the indiscriminate optimization across all frequency bands, even though only specific frequencies may require adjustment. To address this, we introduce a simple yet effective approach that enables selective optimization of specific frequency bands within spatially localized regions, allowing for precise edits. Our method leverages wavelets to decompose images into different spatial resolutions across multiple frequency bands, enabling precise modifications across different levels of detail. To extend the applicability of our approach, we also provide a comparative analysis of different frequency-domain techniques. Additionally, we extend our method to 3D texture editing by performing frequency decomposition on the triplane representation, achieving frequency-aware adjustments for 3D textures editing. Quantitative evaluations and user studies demonstrate the effectiveness of our method in producing high-quality and precise edits. Code will be released upon publication. 
+              </p>
+            </div>
+          </div>
+        </div>
+
+          <!-- Method. -->
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-full_width">
+              <h2 class="title is-3">Method</h2>
+              <div class="content has-text-justified">
+                <p>
+                  Overview of our model architecture for 2D image editing.
+                </p>
+              </div>
+              <img src="static/images/pdfresizer.com-pdf-crop - 2024-11-11T155424.324-1.png" class="center" />
+            </div>
+          </div>
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-full_width">
+              <h2 class="title is-3">More Results</h2>
+              <div class="carousel-container">
+                <!-- Left button to scroll -->
+                <button class="carousel-button left-button" onclick="scrollCarousel(-1)">&#9664;</button>
+                
+                <!-- Carousel sliding area -->
+                <div class="carousel">
+                  <div class="carousel-item">
+                    <img src="static/images/pdfresizer.com-pdf-crop - 2024-11-19T205621.184-1.png" alt="Image 1">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="static/images/pdfresizer.com-pdf-crop - 2024-11-19T205621.184-2.png" alt="Image 2">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="static/images/pdfresizer.com-pdf-crop - 2024-11-19T210520.837-2.png" alt="Image 3">
+                  </div>
+                </div>
+          
+                <!-- Right button to scroll -->
+                <button class="carousel-button right-button" onclick="scrollCarousel(1)">&#9654;</button>
+              </div>
+            </div>
+          </div>
+          
+          <style>
+          /* Style for the carousel container */
+          .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px auto;
+            overflow: hidden;
+          }
+          
+          /* Style for the carousel sliding area */
+          .carousel {
+            display: flex;
+            gap: 20px;
+            scroll-snap-type: x mandatory;
+            overflow-x: scroll;
+            scroll-behavior: smooth;
+            padding: 20px 0;
+          }
+          
+          .carousel-item {
+            flex: 0 0 100%; /* Each item takes the full width of the container */
+            text-align: center;
+            scroll-snap-align: center;
+          }
+          
+          .carousel-item img {
+            width: 100%; /* Increased image size */
+            height: auto;
+            margin: auto;
+            border-radius: 8px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow for better appearance */
+          }
+          
+          /* Style for navigation buttons */
+          .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            z-index: 10;
+            font-size: 24px;
+            padding: 10px;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+          }
+          
+          .carousel-button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+          }
+          
+          .left-button {
+            left: 10px;
+          }
+          
+          .right-button {
+            right: 10px;
+          }
+          
+          h3 {
+            margin: 10px 0;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+          }
+          </style>
+          
+          <script>
+          /* Function to enable horizontal scrolling */
+          function scrollCarousel(direction) {
+            const carousel = document.querySelector('.carousel');
+            const itemWidth = carousel.clientWidth;
+            carousel.scrollBy({
+              left: direction * itemWidth,
+              behavior: 'smooth'
+            });
+          }
+          </script>
+        </section>
+
+        <section>
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-full_width">
+            <h2 class="title is-3">3D mesh texture editing results</h2>
+            <!-- <img src="static/images/results/sample.gif" alt="Examples" width="400"></src> -->
+            <video autoplay muted loop style="width: 70%; height: auto;">
+              <source src="./static/videos/video3.mp4" type="video/mp4">
+            </video>
+            </div>
+          </div>
+      </div>
+
+    
+      
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="content">
+              <p>
+                This website is licensed under a <a rel="license"
+                  href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                  Commons Attribution-ShareAlike 4.0 International License</a>.
+              </p>
+              <p>
+                This webpage template is from <a
+                  href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+              </p>
+              <p>
+                Webpage Author: <a
+                  href="https://zicongjiang.github.io/zicong-jiang/">Zicong Jiang</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
