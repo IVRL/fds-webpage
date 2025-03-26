@@ -389,11 +389,11 @@ function drawOverlay(mergeContext, vidWidth, vidHeight, position, positionY, arr
 new juxtapose.JXSlider('#juxtapose-embed',
   [
     {
-      src: 'static/images/input_1.png',
+      src: './static/images/input_1.png',
       label: 'Input image'
     },
     {
-      src: 'static/images/ours_1.png',
+      src: './static/images/ours_1.png',
       label: 'Ours'
     }
   ],
@@ -408,10 +408,10 @@ new juxtapose.JXSlider('#juxtapose-embed',
 
 
 function tab_gallery_click(idx) {
-  const leftImage1 = `static/images/input_${idx}.png`;
-  const rightImage1 = `static/images/ours_${idx}.png`;
-  const leftImage2 = `static/images/input_${idx}.png`;
-  const rightImage2 = `static/images/dds_${idx}.png`;
+  const leftImage1 = `./static/images/input_${idx}.png`;
+  const rightImage1 = `./static/images/ours_${idx}.png`;
+  const leftImage2 = `./static/images/input_${idx}.png`;
+  const rightImage2 = `./static/images/dds_${idx}.png`;
 
   document.getElementById("juxtapose-embed-1").innerHTML = "";
   document.getElementById("juxtapose-embed-2").innerHTML = "";
