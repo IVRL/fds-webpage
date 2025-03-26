@@ -22,6 +22,10 @@
 
     gtag('config', 'G-PYVRSFMDRL');
   </script>
+  
+  <link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css">
+<script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
+
 
     <link
       href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
@@ -119,7 +123,7 @@
 
             <!-- ArXiv abstract Link -->
             <span class="link-block">
-              <a href="https://arxiv.org/abs/" target="_blank"
+              <a href="https://arxiv.org/pdf/2503.19191" target="_blank"
               class="external-link button is-normal is-rounded is-dark">
               <span class="icon">
                 <i class="ai ai-arxiv"></i>
@@ -140,16 +144,66 @@
   <!-- Teaser video-->
   <section class="hero is-small">
     <div class="hero-body">
-      <div class="columns is-centered has-text-centered">
-        <!-- <div class="container"> -->
-        <!-- <img src="static/images/results/sample.gif" alt="Examples" width="400"></src> -->
-        <video autoplay muted loop style="width: 60%; height: auto;">
-          <source src="static/videos/video.mp4" type="video/mp4">
-        </video>
-        <!-- </div> -->
+      <div class="container is-max-desktop has-text-centered">
+        <!-- The expanding image container -->
+        <!-- <h2 class="title is-3">Text to Image</h2> -->
+        <div class="tab_container">
+          <!-- Close the image -->
+          <!-- <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span> -->
+          <div id="juxtapose-embed-text" style="font-size: 1.3rem;font-family:'Lucida Calligraphy', Times, serif;text-align:center">
+            A cup of <strong style="color:#bc0505";>coffee</strong> → A cup of <strong style="color:#21ad2a";>matcha</strong>
+          </div>
+  
+
+          <!-- Two sliders in a row -->
+          <div id="juxtapose-row" class="columns is-multiline is-centered">
+            <div class="column is-half" id="juxtapose-embed-1"></div>
+            <div class="column is-half" id="juxtapose-embed-2"></div>
+          </div>
+
+  
+          <div>
+            <div id="juxtapose-hidden"></div>
+          </div>
+          
+          <!-- Image text -->
+          <div id="imgtext"></div>
+        </div>
+  
+        <!-- The grid: four columns -->
+        <div class="tab_row" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+          <img class="thumb-img" src="static/images/input_1.png" onclick="tab_gallery_click('1');">
+          <img class="thumb-img" src="static/images/input_2.png" onclick="tab_gallery_click('2');">
+          <img class="thumb-img" src="static/images/input_3.png" onclick="tab_gallery_click('3');">
+          <img class="thumb-img" src="static/images/input_4.png" onclick="tab_gallery_click('4');">
+          <img class="thumb-img" src="static/images/input_5.png" onclick="tab_gallery_click('5');">
+          <img class="thumb-img" src="static/images/input_6.png" onclick="tab_gallery_click('6');">
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- JS to trigger index 1 and highlight thumbnail -->
+  <script>
+    function highlightThumb(index) {
+      // Clear highlights from all thumbs
+      document.querySelectorAll('.thumb-img').forEach(img => {
+        img.style.border = '';
+      });
+
+      // Highlight the selected one
+      const selected = document.getElementById('thumb-' + index);
+      if (selected) {
+        selected.style.border = '3px solid #00aaff';
+        selected.style.borderRadius = '8px';
+      }
+    }
+
+    window.onload = function () {
+      tab_gallery_click('2');
+      highlightThumb('2');
+    };
+  </script>
 
     <section class="section">
       <div class="container is-max-desktop">
@@ -329,3 +383,5 @@
     </footer>
   </body>
 </html>
+
+

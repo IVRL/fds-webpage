@@ -385,3 +385,78 @@ function drawOverlay(mergeContext, vidWidth, vidHeight, position, positionY, arr
   mergeContext.fillStyle = "#444444";
   mergeContext.fill();
 }
+
+new juxtapose.JXSlider('#juxtapose-embed',
+  [
+    {
+      src: 'static/images/input_1.png',
+      label: 'Input image'
+    },
+    {
+      src: 'static/images/ours_1.png',
+      label: 'Ours'
+    }
+  ],
+  {
+    animate: true,
+    showLabels: true,
+    showCredits: false,
+    makeResponsive: true,
+    startingPosition: "50%"
+  }
+);
+
+
+function tab_gallery_click(idx) {
+  const leftImage1 = `static/images/input_${idx}.png`;
+  const rightImage1 = `static/images/ours_${idx}.png`;
+  const leftImage2 = `static/images/input_${idx}.png`;
+  const rightImage2 = `static/images/dds_${idx}.png`;
+
+  document.getElementById("juxtapose-embed-1").innerHTML = "";
+  document.getElementById("juxtapose-embed-2").innerHTML = "";
+
+  new juxtapose.JXSlider('#juxtapose-embed-1',
+    [
+      { src: leftImage1, label: 'Input' },
+      { src: rightImage1, label: 'Ours' }
+    ],
+    {
+      animate: true,
+      showLabels: true,
+      showCredits: false,
+      makeResponsive: true,
+      startingPosition: "50%"
+    });
+
+  new juxtapose.JXSlider('#juxtapose-embed-2',
+    [
+      { src: leftImage2, label: 'Input' },
+      { src: rightImage2, label: 'DDS' }
+    ],
+    {
+      animate: true,
+      showLabels: true,
+      showCredits: false,
+      makeResponsive: true,
+      startingPosition: "50%"
+    });
+    const comparisonTexts = {
+      '1': "A drawing of a gray <strong style='color:#bc0505;'>cat</strong> → A drawing of a gray <strong style='color:#bc0505;'>fox</strong>",
+      '2': "A cup of <strong style='color:#bc0505';>coffee</strong> → A cup of <strong style='color:#bc0505';>matcha</strong>",
+      '3': "A <strong style='color:#bc0505;'>blue</strong> butterfly → A <strong style='color:#bc0505;'>red</strong> butterfly",
+      '4': "A <strong style='color:#bc0505;'>stack of stones</strong> → A <strong style='color:#bc0505;'>Buddha statue</strong>",
+      '5': "A <strong style='color:#bc0505;'>white feather</strong> chicken → A <strong style='color:#bc0505;'>brown</strong> chicken",
+      '6': "A <strong style='color:#bc0505;'>white</strong> stone lion → A <strong style='color:#bc0505;'>red</strong> stone lion",
+    };
+    
+
+    const text = comparisonTexts[idx] || `Comparison ${idx}`;
+    const textElem = document.getElementById("juxtapose-embed-text");
+    textElem.innerHTML = text;
+
+    textElem.style.fontSize = "1.5rem";
+    textElem.style.fontWeight = "bold";
+    textElem.style.fontFamily = "'Noto Sans', sans-serif";
+}
+
