@@ -132,6 +132,17 @@
             </a>
           </span>
 
+          <!-- Youtube link -->
+          <span class="link-block">
+            <a href="https://youtu.be/UffF5y2RERo?si=uitMezXoMb-7EgTM" target="_blank"
+            class="external-link button is-normal is-rounded is-dark">
+            <span class="icon">
+              <i class="fab fa-youtube"></i>
+            </span>
+            <span>Youtube</span>
+          </a>
+          </span>
+
                 </div>
 
               </div>
@@ -200,10 +211,10 @@
       }
     }
 
-    window.onload = function () {
-      tab_gallery_click('2');
-      highlightThumb('2');
-    };
+    // window.onload = function () {
+    //   tab_gallery_click('2');
+    //   highlightThumb('2');
+    // };
   </script>
 
     <section class="section">
@@ -230,7 +241,7 @@
                   Overview of our model architecture for 2D image editing.
                 </p>
               </div>
-              <img src="static/images/pdfresizer.com-pdf-crop - 2024-11-11T155424.324-1.png" class="center" />
+              <img src="static/images/method.png" class="center" />
             </div>
           </div>
           <div class="columns is-centered has-text-centered">
@@ -342,6 +353,76 @@
           </script>
         </section>
 
+    <!-- Compare with ChatGPT-4o -->
+    <section class="hero is-small">
+      <div class="hero-body">
+        <div class="container is-max-desktop has-text-centered">
+          <h2 class="title is-3">Comparison with ChatGPT-4o Editing</h2>
+          <div class="content has-text-justified" style="margin-top: 1rem;">
+            <p>
+              On March 25, 2025, OpenAI released <strong>ChatGPT-4o Image Generation</strong>, exhibiting impressive image generation capabilities.
+              However, we noticed some artifacts during editing, such as non-faithful preservation of details and re-drawing instead of actual editing.
+              We present some of our early experimental comparisons to highlight these differences.
+            </p>
+          </div>
+          <div class="tab_container">
+            <div id="juxtapose-embed-text-4o" style="font-size: 1.3rem;font-family:'Lucida Calligraphy', Times, serif;text-align:center">
+              A cup of <strong style="color:#bc0505";>coffee</strong> → A cup of <strong style="color:#21ad2a";>matcha</strong>
+            </div>
+    
+  
+            <!-- Two sliders in a row -->
+            <div id="juxtapose-row-4o" class="columns is-multiline is-centered">
+              <div class="column is-half" id="juxtapose-embed-1-4o"></div>
+              <div class="column is-half" id="juxtapose-embed-2-4o"></div>
+            </div>
+  
+    
+            <div>
+              <div id="juxtapose-hidden-4o"></div>
+            </div>
+            
+            <!-- Image text -->
+            <div id="imgtext-4o"></div>
+          </div>
+    
+          <!-- The grid: four columns -->
+          <div class="tab_row" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+            <img class="thumb-img" src="./static/images/input_1.png" onclick="tab_gallery_click_4o('1');">
+            <img class="thumb-img" src="./static/images/input_2.png" onclick="tab_gallery_click_4o('2');">
+            <img class="thumb-img" src="./static/images/input_3.png" onclick="tab_gallery_click_4o('3');">
+            <img class="thumb-img" src="./static/images/input_4.png" onclick="tab_gallery_click_4o('4');">
+            <img class="thumb-img" src="./static/images/input_5.png" onclick="tab_gallery_click_4o('5');">
+            <img class="thumb-img" src="./static/images/input_6.png" onclick="tab_gallery_click_4o('6');">
+            <img class="thumb-img" src="./static/images/input_7.png" onclick="tab_gallery_click_4o('7');">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function highlightThumb_4o(index) {
+        // Clear highlights from all thumbs
+        document.querySelectorAll('.thumb-img').forEach(img => {
+          img.style.border = '';
+        });
+  
+        // Highlight the selected one
+        const selected = document.getElementById('thumb-' + index);
+        if (selected) {
+          selected.style.border = '3px solid #00aaff';
+          selected.style.borderRadius = '8px';
+        }
+      }
+  
+      window.onload = function () {
+        tab_gallery_click('2');
+        highlightThumb('2');
+        tab_gallery_click_4o('2');
+        highlightThumb_4o('2');
+      };
+    </script>
+
         <section>
           <div class="columns is-centered has-text-centered">
             <div class="column is-full_width">
@@ -357,6 +438,20 @@
     
       
     </section>
+
+      <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+          <h2 class="title">Citation</h2>
+          <p>If you find our work useful or interesting, please consider citing our paper:</p>
+          <pre><code>@article{ren2025fds,
+  title={FDS: Frequency-Aware Denoising Score for Text-Guided Latent Diffusion Image Editing},
+  author={Ren, Yufan and Jiang, Zicong and Zhang, Tong and Forchhammer, Sören and Süsstrunk, Sabine},
+  journal={arXiv preprint arXiv:2503.19191},
+  year={2025}
+}
+          </code></pre>
+        </div>
+      </section>
 
     <footer class="footer">
       <div class="container">
@@ -399,7 +494,7 @@
     new juxtapose.JXSlider('#juxtapose-embed-1',
       [
         { src: leftImage1, label: 'Input' },
-        { src: rightImage1, label: 'Ours' }
+        { src: rightImage1, label: 'DDS+Ours' }
       ],
       {
         animate: true,
@@ -427,7 +522,7 @@
       '2': "A cup of <strong style='color:#bc0505';>coffee</strong> → A cup of <strong style='color:#bc0505';>matcha</strong>",
       '3': "A <strong style='color:#bc0505;'>blue</strong> butterfly → A <strong style='color:#bc0505;'>red</strong> butterfly",
       '4': "A <strong style='color:#bc0505;'>stack of stones</strong> → A <strong style='color:#bc0505;'>Buddha statue</strong>",
-      '5': "A <strong style='color:#bc0505;'>white feather</strong> chicken → A <strong style='color:#bc0505;'>brown</strong> chicken",
+      '5': "A <strong style='color:#bc0505;'>white feather</strong> chicken → A <strong style='color:#bc0505;'>' '</strong> chicken",
       '6': "A <strong style='color:#bc0505;'>white</strong> stone lion → A <strong style='color:#bc0505;'>red</strong> stone lion",
       '7': "A drawing of a <strong style='color:#bc0505;'>cat</strong> → A drawing of a <strong style='color:#bc0505;'>dog</strong>"
     };
@@ -439,6 +534,60 @@
     textElem.style.fontWeight = "bold";
   }
   </script>
+
+
+<script>
+  function tab_gallery_click_4o(idx) {
+    const leftImage1 = `static/images/input_${idx}.png`;
+    const rightImage1 = `static/images/ours_${idx}.png`;
+    const leftImage2 = `static/images/input_${idx}.png`;
+    const rightImage2 = `static/images/4o_${idx}.png`;
   
+    document.getElementById("juxtapose-embed-1-4o").innerHTML = "";
+    document.getElementById("juxtapose-embed-2-4o").innerHTML = "";
+  
+    new juxtapose.JXSlider('#juxtapose-embed-1-4o',
+      [
+        { src: leftImage1, label: 'Input' },
+        { src: rightImage1, label: 'DDS+Ours' }
+      ],
+      {
+        animate: true,
+        showLabels: true,
+        showCredits: false,
+        makeResponsive: true,
+        startingPosition: "50%"
+      });
+  
+    new juxtapose.JXSlider('#juxtapose-embed-2-4o',
+      [
+        { src: leftImage2, label: 'Input' },
+        { src: rightImage2, label: 'ChatGPT-4o' }
+      ],
+      {
+        animate: true,
+        showLabels: true,
+        showCredits: false,
+        makeResponsive: true,
+        startingPosition: "50%"
+      });
+  
+    const comparisonTexts = {
+      '1': "A drawing of a gray <strong style='color:#bc0505;'>cat</strong> → A drawing of a gray <strong style='color:#bc0505;'>fox</strong>",
+      '2': "A cup of <strong style='color:#bc0505';>coffee</strong> → A cup of <strong style='color:#bc0505';>matcha</strong>",
+      '3': "A <strong style='color:#bc0505;'>blue</strong> butterfly → A <strong style='color:#bc0505;'>red</strong> butterfly",
+      '4': "A <strong style='color:#bc0505;'>stack of stones</strong> → A <strong style='color:#bc0505;'>Buddha statue</strong>",
+      '5': "A <strong style='color:#bc0505;'>white feather</strong> chicken → A <strong style='color:#bc0505;'>' '</strong> chicken",
+      '6': "A <strong style='color:#bc0505;'>white</strong> stone lion → A <strong style='color:#bc0505;'>red</strong> stone lion",
+      '7': "A drawing of a <strong style='color:#bc0505;'>cat</strong> → A drawing of a <strong style='color:#bc0505;'>dog</strong>"
+    };
+  
+    const text = comparisonTexts[idx] || `Comparison ${idx}`;
+    const textElem = document.getElementById("juxtapose-embed-text-4o");
+    textElem.innerHTML = text;
+    textElem.style.fontSize = "1.5rem";
+    textElem.style.fontWeight = "bold";
+  }
+  </script>
 
 

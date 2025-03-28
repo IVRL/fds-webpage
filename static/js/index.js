@@ -459,4 +459,3 @@ function tab_gallery_click(idx) {
     textElem.style.fontWeight = "bold";
     textElem.style.fontFamily = "'Noto Sans', sans-serif";
 }
-
