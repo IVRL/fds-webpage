@@ -8,6 +8,13 @@
       content="VolRecon, volume rendering, multi-view reconstruction">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>FDS: Frequency-Aware Denoising Score for Text-Guided Latent Diffusion Image Editing</title>
+    <style>
+      .subtitle-logo {
+        height: 100px; /* Adjust height as needed */
+        margin-top: 0px;
+        margin-bottom: 10px;
+      }
+    </style>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -50,6 +57,7 @@
   </head>
   <body>
 
+
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <a role="button" class="navbar-burger" aria-label="menu"
@@ -67,7 +75,8 @@
           <div class="columns is-centered">
             <div class="column has-text-centered">
               <h1 class="title is-1 publication-title">FDS: Frequency-Aware Denoising Score for Text-Guided Latent Diffusion Image Editing</h1>
-              <!-- <h2 class="is-size-2">CVPR2025</h2> -->
+              <!-- <h2 class="is-size-2">CVPR 2025</h2> -->
+              <img src="static/images/cvpr.jpg" alt="CVPR 2025 Logo" class="subtitle-logo">
               <div class="is-size-5 publication-authors">
                 <span class="author-block">
                   <a href="https://people.epfl.ch/yufan.ren?lang=en">Yufan Ren</a><sup>1</sup>,</span>
@@ -358,10 +367,10 @@
     <section class="hero is-small">
       <div class="hero-body">
         <div class="container is-max-desktop has-text-centered">
-          <h2 class="title is-3">Comparison with ChatGPT-4o Editing</h2>
+          <h2 class="title is-3">Comparison with OpenAI's 4o Image Generation</h2>
           <div class="content has-text-justified" style="margin-top: 1rem;">
             <p>
-              On March 25, 2025, OpenAI released <strong>ChatGPT-4o Image Generation</strong>, exhibiting impressive image generation capabilities.
+              On March 25, 2025, OpenAI released <strong>4o Image Generation</strong>, exhibiting impressive image generation capabilities.
               However, we noticed some artifacts during editing, such as non-faithful preservation of details and re-drawing instead of actual editing.
               We present some of our early experimental comparisons to highlight these differences.
             </p>
@@ -565,7 +574,7 @@
     new juxtapose.JXSlider('#juxtapose-embed-2-4o',
       [
         { src: leftImage2, label: 'Input' },
-        { src: rightImage2, label: 'ChatGPT-4o' }
+        { src: rightImage2, label: '4o Image Generation' }
       ],
       {
         animate: true,
